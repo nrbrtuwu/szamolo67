@@ -1,4 +1,4 @@
-# Igazi szigma 67 számoló
+# Igazi szigma 67 számológép
 
 Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely tartalmaz
 - normál kalkulátor módot,
