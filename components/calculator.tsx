@@ -15,7 +15,7 @@ export function Calculator() {
   const calc = useCalculator(t)
   const [settingsOpen, setSettingsOpen] = useState(false)
 
-  // Keyboard support
+  // Keyboard support 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (calc.mode !== "standard") return
