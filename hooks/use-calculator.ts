@@ -235,7 +235,7 @@ export function useCalculator(t?: TranslationSet) {
       if (prev.display === "0" && digit !== ".") {
         return { ...prev, display: digit }
       }
-      // Prevent multiple decimals
+      // Prevent multiple decimals 
       if (digit === "." && prev.display.split(/[+\-×÷]/).pop()?.includes(".")) {
         return prev
       }
