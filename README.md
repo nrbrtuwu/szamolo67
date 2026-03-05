@@ -1,4 +1,4 @@
-# Tudományos Kalkulátor + Blackjack Bot (Next.js + Python)
+# Igazi szigma 67 számoló
 
 Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely tartalmaz
 - normál kalkulátor módot,
@@ -6,7 +6,7 @@ Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely
 - rejtett blackjack mini-játékot,
 - automata bot módot Python döntési logikával.
 
-## Fő funkciók
+## ⚙️ Fő funkciók
 
 - **Standard mód**: tudományos műveletek (sin, cos, tan, log, ln, zárójelek, memória gombok stb.).
 - **Quadratic mód**: `ax² + bx + c = 0` megoldása valós/komplex gyökökkel.
@@ -14,12 +14,12 @@ Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely
 - **Bot mód**: rejtett aktiválás után automatikus játék és körönkénti értesítések.
 - **Téma + nyelv + egyedi stílus**: beállítások panelen módosítható, mentéssel.
 
-## Rejtett aktiválások
+## 🕵️ Rejtett aktiválások
 
 - **Blackjack belépés**: standard módban írj be `21`, majd `=`.
-- **Bot aktiválás**: blackjackben tétnek adj meg `67`-et, majd `Deal`.
+- **Bot aktiválás**: blackjackben tétnek adj meg `██`-et, majd `Deal`.
 
-## Projekt felépítése (röviden)
+## 🗂️ Projekt felépítése (röviden)
 
 - `app/` – Next.js App Router oldalak és globális stílus.
 - `components/` – UI komponensek (kalkulátor, blackjack panel, beállítások, toastok).
@@ -28,13 +28,13 @@ Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely
 - `api/bot/decision.py` – **integrált Vercel Python API endpoint** a bot döntéshez.
 - `python_bot/` – külön Python bot implementáció (helyi/önálló futtatáshoz).
 
-## Technológia
+## 🧱 Technológia
 
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind.
 - **UI**: Radix alapú komponensek.
 - **Bot API**: Python + FastAPI + Pydantic.
 
-## Python rész (kiemelten fontos)
+## 🐍 Python rész (kiemelten fontos)
 
 Ebben a projektben a bot **nem csak kliens oldali trükk**, hanem valódi Python döntési logikát használ:
 
@@ -42,21 +42,21 @@ Ebben a projektben a bot **nem csak kliens oldali trükk**, hanem valódi Python
 - A bot döntés EV-alapú (Expected Value) szimulációt és alapstratégia szabályokat is használ.
 - A frontend minden bot-lépésnél HTTP hívással kér döntést (`hit` / `stand` / `double`).
 
-### Mit csinál a Python kód?
+### 🔬 Mit csinál a Python kód?
 
 - Kártyakéz kiértékelés (hard/soft kéz, ász kezelés).
 - Dealer szimuláció és körkimenet számítás.
 - Több akció Monte Carlo jellegű EV becslése.
 - Legjobb akció kiválasztása confidence/indoklás mezőkkel.
 
-### Miért jó ez tanári szempontból?
+### 🎓 Miért jó ez tanári szempontból?
 
 - A Python backend elkülönített logikai rétegként működik.
 - Jól bemutatható az API-tervezés (`request`/`response` modellek Pydantic-kel).
 - A bot döntések reprodukálható, tesztelhető logikán alapulnak.
 - Nem csak UI projekt: van benne backend, algoritmika és deploy-kész API.
 
-## Helyi futtatás
+## 🚀 Helyi futtatás
 
 ### 1) Függőségek telepítése
 
@@ -79,7 +79,7 @@ pnpm build
 pnpm start
 ```
 
-## Fontos npm scriptek
+## 🧩 Fontos npm scriptek
 
 - `pnpm dev` – fejlesztői szerver.
 - `pnpm build` – production build.
@@ -87,7 +87,7 @@ pnpm start
 - `npm run bot:install` – Python bot függőségek telepítése (`python_bot/requirements.txt`).
 - `npm run bot:run` – külön Python bot szerver futtatása lokálisan.
 
-## Környezeti változók
+## 🔐 Környezeti változók
 
 - `NEXT_PUBLIC_BLACKJACK_BOT_URL` (opcionális):
 	- ha nincs beállítva, az app a belső `/api/bot/decision` útvonalat használja,
@@ -99,7 +99,7 @@ Példa:
 NEXT_PUBLIC_BLACKJACK_BOT_URL=https://your-bot-domain.com/bot/decision
 ```
 
-## API röviden
+## 🌐 API röviden
 
 ### `POST /api/bot/decision`
 
@@ -120,7 +120,7 @@ Várható bemenet (példa):
 
 Válasz lényege: `action` (`"hit" | "stand" | "double"`) + EV/konfidencia mezők.
 
-## Opcionális: külön Python bot futtatása lokálisan
+## 🛠️ Opcionális: külön Python bot futtatása lokálisan
 
 A `package.json` tartalmaz helper scripteket:
 
@@ -149,7 +149,7 @@ Példa:
 NEXT_PUBLIC_BLACKJACK_BOT_URL=http://127.0.0.1:8000/bot/decision
 ```
 
-## Vercel deploy (rövid)
+## ☁️ Vercel deploy (rövid)
 
 1. Pushold a repót GitHub-ra.
 2. Importáld Vercelbe mint Next.js projekt.
@@ -157,18 +157,18 @@ NEXT_PUBLIC_BLACKJACK_BOT_URL=http://127.0.0.1:8000/bot/decision
 
 Az integrált Python endpoint (`api/bot/decision.py`) ugyanebben a projektben fut, ezért nincs kötelező külön bot szerver.
 
-### Python Vercelen – fontos megjegyzés
+### 🐍 Python Vercelen – fontos megjegyzés
 
 - Vercelen a Python rész **serverless function** formában fut (nem folyamatos `uvicorn` processzként).
 - Emiatt az integrált endpoint az `api/bot/decision.py` alatt van kialakítva.
 - A külön `python_bot/` mappa továbbra is hasznos helyi fejlesztéshez és dokumentációhoz.
 
-## Megjegyzés
+## 📝 Megjegyzés
 
 - A `.next/` mappa build output, nem forrás.
 - Bot szövegek (`Sigeon`/`Sigenon`) jelenleg vegyesen vannak a forrásban; ez külön tisztítható, ha szeretnéd.
 
-## Gyors hibaelhárítás
+## 🧯 Gyors hibaelhárítás
 
 - Ha a bot nem válaszol: nézd meg, hogy az endpoint elérhető-e (`/api/bot/decision`) és nincs-e CORS/proxy gond.
 - Ha Python import hibát látsz VS Code-ban: válaszd ki a megfelelő Python interpretert (Pylance env mismatch gyakori).
