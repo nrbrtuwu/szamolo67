@@ -589,7 +589,7 @@ export function useCalculator(t?: TranslationSet) {
           botEnabled,
           botAutoPlay,
           botInProgress: false,
-          botActivationNotice: isActivationBet ? "Sigeon Bot has be activated!" : prev.botActivationNotice,
+          botActivationNotice: isActivationBet ? "Sigeon Bot has been activated!" : prev.botActivationNotice,
           message: "Round started. Hit or Stand.",
         }
       }
@@ -615,7 +615,7 @@ export function useCalculator(t?: TranslationSet) {
           botEnabled,
           botInProgress: false,
           botAutoPlay,
-          botActivationNotice: isActivationBet ? "Sigeon Bot has be activated!" : prev.botActivationNotice,
+          botActivationNotice: isActivationBet ? "Sigeon Bot has been activated!" : prev.botActivationNotice,
           botRoundNotice: createBotRoundNotice(botEnabled, "push", 0),
           message: "Push. Both have Blackjack.",
         }
@@ -636,7 +636,7 @@ export function useCalculator(t?: TranslationSet) {
           botEnabled,
           botInProgress: false,
           botAutoPlay,
-          botActivationNotice: isActivationBet ? "Sigeon Bot has be activated!" : prev.botActivationNotice,
+          botActivationNotice: isActivationBet ? "Sigeon Bot has been activated!" : prev.botActivationNotice,
           botRoundNotice: createBotRoundNotice(botEnabled, "won", bet * 2.5),
           message: "Blackjack! You win 3:2.",
         }
@@ -657,7 +657,7 @@ export function useCalculator(t?: TranslationSet) {
           botEnabled,
           botInProgress: false,
           botAutoPlay,
-          botActivationNotice: isActivationBet ? "Sigeon Bot has be activated!" : prev.botActivationNotice,
+          botActivationNotice: isActivationBet ? "Sigeon Bot has been activated!" : prev.botActivationNotice,
           botRoundNotice: createBotRoundNotice(botEnabled, "lost", bet),
           message: "Dealer Blackjack. You lose.",
         }
@@ -676,7 +676,7 @@ export function useCalculator(t?: TranslationSet) {
         botEnabled,
         botInProgress: false,
         botAutoPlay,
-        botActivationNotice: isActivationBet ? "Sigeon Bot has be activated!" : prev.botActivationNotice,
+        botActivationNotice: isActivationBet ? "Sigeon Bot has been activated!" : prev.botActivationNotice,
         botRoundNotice: null,
         message: isActivationBet
           ? "🤖 Bot unlocked! Round started."
