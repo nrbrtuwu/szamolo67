@@ -134,8 +134,8 @@ function formatMoneyAmount(value: number): string {
 function createBotRoundNotice(botEnabled: boolean, outcome: "won" | "lost" | "push", amount: number): string | null {
   if (!botEnabled) return null
   if (outcome === "push" || amount <= 0) return null
-  if (outcome === "won") return `Sigenon Bot: Won ${formatMoneyAmount(amount)}$`
-  if (outcome === "lost") return `Sigenon Bot: Lost ${formatMoneyAmount(amount)}$`
+  if (outcome === "won") return `Sigeon Bot: Won ${formatMoneyAmount(amount)}$`
+  if (outcome === "lost") return `Sigeon Bot: Lost ${formatMoneyAmount(amount)}$`
   return null
 }
 
