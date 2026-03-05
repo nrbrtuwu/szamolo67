@@ -108,7 +108,7 @@ export function Calculator() {
     const isLoss = notice.includes("Lost")
     toast({
       variant: isLoss ? "destructive" : "default",
-      title: "Sigenon Bot",
+      title: "Sigeon Bot",
       description: notice,
       duration: 2600,
       className: isLoss
