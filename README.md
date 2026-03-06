@@ -16,7 +16,7 @@ Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely
 
 ## 🕵️ Rejtett aktiválások
 
-- **Blackjack belépés**: standard módban írj be `21`, majd `=`.
+- **Blackjack belépés**: standard módban írj be `██`, majd `=`.
 - **Bot aktiválás**: blackjackben tétnek adj meg `██`-et, majd `Deal`.
 
 ## 🗂️ Projekt felépítése (röviden)
