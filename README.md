@@ -61,13 +61,13 @@ Ebben a projektben a bot **nem csak kliens oldali trükk**, hanem valódi Python
 ### 1) Függőségek telepítése
 
 ```bash
-pnpm install
+npm install
 ```
 
 ### 2) Fejlesztői szerver indítása
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 Alapértelmezetten a frontend az integrált API-t hívja: `/api/bot/decision`.
@@ -75,15 +75,15 @@ Alapértelmezetten a frontend az integrált API-t hívja: `/api/bot/decision`.
 ### 3) Build / production ellenőrzés
 
 ```bash
-pnpm build
-pnpm start
+npm build
+npm start
 ```
 
 ## 🧩 Fontos npm scriptek
 
-- `pnpm dev` – fejlesztői szerver.
-- `pnpm build` – production build.
-- `pnpm start` – production indítás.
+- `npm dev` – fejlesztői szerver.
+- `npm build` – production build.
+- `npm start` – production indítás.
 - `npm run bot:install` – Python bot függőségek telepítése (`python_bot/requirements.txt`).
 - `npm run bot:run` – külön Python bot szerver futtatása lokálisan.
 
