@@ -34,9 +34,7 @@ Röviden: ez egy modern, témázható tudományos kalkulátor alkalmazás, amely
 - **UI**: Radix alapú komponensek.
 - **Bot API**: Python + FastAPI + Pydantic.
 
-## 🐍 Python rész (kiemelten fontos)
-
-Ebben a projektben a bot **nem csak kliens oldali trükk**, hanem valódi Python döntési logikát használ:
+## 🐍 Python
 
 - A Python bot fő implementációja: `python_bot/blackjack_bot_api.py`.
 - A bot döntés EV-alapú (Expected Value) szimulációt és alapstratégia szabályokat is használ.
@@ -46,7 +44,6 @@ Ebben a projektben a bot **nem csak kliens oldali trükk**, hanem valódi Python
 
 - Kártyakéz kiértékelés (hard/soft kéz, ász kezelés).
 - Dealer szimuláció és körkimenet számítás.
-- Több akció Monte Carlo jellegű EV becslése.
 - Legjobb akció kiválasztása confidence/indoklás mezőkkel.
 
 ### 🎓 Miért jó ez tanári szempontból?
@@ -67,23 +64,16 @@ npm install
 ### 2) Fejlesztői szerver indítása
 
 ```bash
-npm dev
+npm run dev
 ```
 
 Alapértelmezetten a frontend az integrált API-t hívja: `/api/bot/decision`.
 
-### 3) Build / production ellenőrzés
-
-```bash
-npm build
-npm start
-```
-
 ## 🧩 Fontos npm scriptek
 
-- `npm dev` – fejlesztői szerver.
-- `npm build` – production build.
-- `npm start` – production indítás.
+- `npm run dev` – fejlesztői szerver.
+- `npm run build` – production build.
+- `npm run start` – production indítás.
 - `npm run bot:install` – Python bot függőségek telepítése (`python_bot/requirements.txt`).
 - `npm run bot:run` – külön Python bot szerver futtatása lokálisan.
 
@@ -157,19 +147,3 @@ NEXT_PUBLIC_BLACKJACK_BOT_URL=http://127.0.0.1:8000/bot/decision
 
 Az integrált Python endpoint (`api/bot/decision.py`) ugyanebben a projektben fut, ezért nincs kötelező külön bot szerver.
 
-### 🐍 Python Vercelen – fontos megjegyzés
-
-- Vercelen a Python rész **serverless function** formában fut (nem folyamatos `uvicorn` processzként).
-- Emiatt az integrált endpoint az `api/bot/decision.py` alatt van kialakítva.
-- A külön `python_bot/` mappa továbbra is hasznos helyi fejlesztéshez és dokumentációhoz.
-
-## 📝 Megjegyzés
-
-- A `.next/` mappa build output, nem forrás.
-- Bot szövegek (`Sigeon`/`Sigenon`) jelenleg vegyesen vannak a forrásban; ez külön tisztítható, ha szeretnéd.
-
-## 🧯 Gyors hibaelhárítás
-
-- Ha a bot nem válaszol: nézd meg, hogy az endpoint elérhető-e (`/api/bot/decision`) és nincs-e CORS/proxy gond.
-- Ha Python import hibát látsz VS Code-ban: válaszd ki a megfelelő Python interpretert (Pylance env mismatch gyakori).
-- Ha deploy után más viselkedést látsz: ellenőrizd a Vercel Environment Variables értékeit és redeployolj.
