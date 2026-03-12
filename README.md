@@ -139,7 +139,7 @@ Példa:
 NEXT_PUBLIC_BLACKJACK_BOT_URL=http://127.0.0.1:8000/bot/decision
 ```
 
-## ☁️ Vercel deploy (rövid)
+## ☁️ Vercel deploy
 
 1. Pushold a repót GitHub-ra.
 2. Importáld Vercelbe mint Next.js projekt.
